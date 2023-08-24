@@ -19,12 +19,12 @@ const BookMark = ({navigation}: {navigation: any}) => {
   };
   return (
     <View style={{backgroundColor: 'white', height: 800, width: 400}}>
-      <Image
+      {/* <Image
         style={{width: 400, height: 200}}
         source={{
           uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1G3QgibOnOFAgmiWVTcGRLghMzxwu9HHGZA&usqp=CAU',
         }}
-      />
+      /> */}
       <ScrollView style={{height: '100%'}}>
         {item.length === 0 && (
           <View style={{alignItems: 'center', padding: 165 }}>

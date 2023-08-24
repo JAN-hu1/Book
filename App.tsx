@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, Text, TouchableHighlight, View} from 'react-native';
 import Home from './Home';
-import Profile from './Profile';
+import Profile from './Details';
 import Login from './Login';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -13,6 +13,7 @@ import BookMark from './BookMark';
 import {Provider} from 'react-redux';
 import Store from './Store';
 import TabNav from './Tab';
+import Details from './Details';
 
 // import LogScreen from "./LogScreen";
 
@@ -33,7 +34,7 @@ export function HomeStack() {
           options={{title: 'Shop Here!!!',headerShown:true}}
         />
 
-        <Stack.Screen name="Profile" component={Profile} options={{headerShown:true}}/>
+        <Stack.Screen name="Details" component={Details} options={{headerShown:true}}/>
 
       </Stack.Navigator>
     </NavigationContainer>

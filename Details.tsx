@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux"
 import TabNav from "./Tab"
 
 
-const Profile = ({navigation,route}:{navigation:any,route:any}) => {
+const Details = ({navigation,route}:{navigation:any,route:any}) => {
 
     const {item}=route.params
     const dispatch=useDispatch()
@@ -14,7 +14,7 @@ const Profile = ({navigation,route}:{navigation:any,route:any}) => {
   }
 
     return (
-     
+      
       <View style={{alignItems:"center",gap:10}}>
      <Text style={{fontSize: 30,color: 'black',fontWeight: 'bold'}}>{item.title} </Text>
     <Image style={{height:200,width:300}}source={{uri:item.image}}/>
@@ -29,4 +29,4 @@ const Profile = ({navigation,route}:{navigation:any,route:any}) => {
     )
 }
 
-export default Profile
+export default Details

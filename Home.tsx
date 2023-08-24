@@ -8,9 +8,9 @@ import BookMark from './BookMark';
 import Info from './Info';
 import { ImageBackground } from 'react-native';
 import {Text,StyleSheet, BackHandler, Alert} from 'react-native';
+import Search from './Search'
 
-
-const Home=({navigation}:{navigation:any})=>{
+const Home=({navigation}:{navigation?:any,books?:any})=>{
     const Tab = createBottomTabNavigator();
 interface Book{
 
@@ -24,8 +24,8 @@ url:string;
 }
 useEffect(() => {
     const backAction = () => {
-        if(navigation.getState().index){
-            return true
+        if(navigation.getState().index==0&&navigation.getState().index==1){
+            return false
         }
       Alert.alert('Hold on!', 'Are you sure you want to go back?', [
         {
@@ -61,23 +61,24 @@ useEffect(() => {
 return(
 <>
     
-
+<Search books={books} navigation={navigation}/>
 
 
     < View>
-    <Image style={{ width: 390, height: 200}}source={{uri:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1G3QgibOnOFAgmiWVTcGRLghMzxwu9HHGZA&usqp=CAU"}}/>
 
-    <FlatList
+    {/* <Image style={{ width: 390, height:50}}source={{uri:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1G3QgibOnOFAgmiWVTcGRLghMzxwu9HHGZA&usqp=CAU"}}/> */}
+
+    <FlatList style={{backgroundColor:'#15777a'}}
 
     data={books}
     numColumns={2}
     renderItem={({item})=>(
-        <View style={{ flex:1,alignItems: 'center',backgroundColor:'#15777a'}}>
+        <View style={{ flex:1,alignItems: 'center',backgroundColor:'#15777a',borderColor:"white",borderWidth:10,margin:4}}>
         <TouchableHighlight
          onPress={() =>
-            navigation.navigate('Profile',{item:item})
+            navigation.navigate('Details',{item:item})
           }>
-<View style={{borderRadius:100}}>
+<View style={{borderRadius:100,backgroundColor:'#15777a'}}>
   
     <Image key={item.isbn13}   style={{ width: 150, height: 200}}source={{uri:item.image}}/>
 </View>

@@ -22,13 +22,13 @@ const Info=({navigation}:{navigation:any})=>{
       };
 return(
     
-<View style={{display:"flex",alignItems:"center",gap:10,}} >
-<Image style={{ width: 400, height: 200}}source={{uri:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1G3QgibOnOFAgmiWVTcGRLghMzxwu9HHGZA&usqp=CAU"}}/>
+<View style={{display:"flex",alignItems:"center",gap:10,backgroundColor:"white",justifyContent:"center",height:800}} >
+{/* <Image style={{ width: 400, height: 200}}source={{uri:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1G3QgibOnOFAgmiWVTcGRLghMzxwu9HHGZA&usqp=CAU"}}/> */}
 
     
     {user&&<Image style={{ height:80,width:80}} source={{uri:user.picture}} />}
-           {user&&<Text>{user.name}</Text>}
-          {user&& <Text>{user.email}</Text>}
+           {user&&<Text style={{color:"black",}}>{user.name}</Text>}
+          {user&& <Text style={{color:"black"}}>{user.email}</Text>}
 
    <Button title="Logout" onPress={onLogout}></Button>
    </View>
